@@ -6,6 +6,10 @@ class ReservationsController < ApplicationController
 
   def new
   	@reservation = Reservation.new
+    @reservation.start_at_date = Time.zone.now.to_date.to_s
+
+    @reservation.end_at_date = Time.zone.now.to_date.to_s
+    @reservation.end_at_time = (Time.zone.now + 2.hour).strftime("%H:%M")
   end
 
   def create
@@ -22,7 +26,7 @@ class ReservationsController < ApplicationController
   protected
 
   def reservation_params
-  	params.require(:reservation).permit(:start_at, :end_at)
+  	params.require(:reservation).permit(:start_at_date, :start_at_time, :end_at_date, :end_at_time)
   end
 
 end
