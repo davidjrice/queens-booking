@@ -1,5 +1,11 @@
 <%= form_for @reservation do |f| %>
   Start: <%= f.text_field :start_at %><br />
+  
+  <div class='input-append bootstrap-timepicker' style='display: inline;'>
+    <%= f.text_field :start_at_time, :class => "input-small", 'data-behaviour' => 'timepicker' %>
+    <span class='add-on'><i class='icon-time'></i></span>
+  </div>
+
   End: <%= f.text_field :end_at, 'data-behaviour' => 'datepicker' %><br />
   <%= f.submit %>
 <% end %>

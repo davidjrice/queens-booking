@@ -14,9 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-modal
 //= require bootstrap-datepicker
+//= require bootstrap-timepicker
 //= require_tree .
 
 $(document).ready(function(){
   $('[data-behaviour~=datepicker]').datepicker();
+})
+
+$(document).ready(function(){
+  $('[data-behaviour~=timepicker]').timepicker({
+    minuteStep: 1,
+    template: 'modal',
+    showSeconds: true,
+    showMeridian: false
+  });
 })
