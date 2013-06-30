@@ -1,5 +1,5 @@
 <%= form_for @reservation do |f| %>
-  Start: <%= f.datetime_select :start_at %><br />
-  End: <%= f.datetime_select :end_at %><br />
+  Start: <%= f.text_field :start_at %><br />
+  End: <%= f.text_field :end_at, 'data-behaviour' => 'datepicker' %><br />
   <%= f.submit %>
 <% end %>

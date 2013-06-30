@@ -9,6 +9,9 @@ gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Bootstrap Datepicker Rails
+gem 'bootstrap-datepicker-rails'
+
 # Twitter Bootstrap UI components
 gem 'bootstrap-sass', '~> 2.3.2.0'
 
