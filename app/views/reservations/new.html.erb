@@ -1,0 +1,5 @@
+<%= form_for @reservation do |f| %>
+  Start: <%= f.datetime_select :start_at %><br />
+  End: <%= f.datetime_select :end_at %><br />
+  <%= f.submit %>
+<% end %>
