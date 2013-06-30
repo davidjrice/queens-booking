@@ -10,6 +10,8 @@ class ReservationsController < ApplicationController
 
   def create
   	@reservation = Reservation.new reservation_params
+    @reservation.user_id = current_user.id
+
     if @reservation.save
     	redirect_to reservations_path, :notice => "Reservation Made"
     else
