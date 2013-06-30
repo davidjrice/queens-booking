@@ -1,2 +1,16 @@
-<h1>HELLO WORLD</h1>
+<h1>My Reservations</h1>
 <%= link_to "New Reservation", new_reservation_path, :class => "btn btn-primary" %>
+
+<table>
+  <tr>
+    <th>Start time</th>
+    <th>End time</th>
+  </tr>
+<%- @reservations.each do |reservation| -%>
+  <tr>
+    <td><%= reservation.start_at %></td>
+    <td><%= reservation.end_at %></td>
+  </tr>
+  
+<%- end -%>
+</table>
