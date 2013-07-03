@@ -1,5 +1,6 @@
 <h1>My Reservations</h1>
 <%= link_to "New Reservation", new_reservation_path, :class => "btn btn-primary" %>
+<%= link_to "Sign Out", destroy_user_session_path, :class => "btn", :method => "delete" %>
 
 <table>
   <tr>
