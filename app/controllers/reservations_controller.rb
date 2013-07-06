@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
     	redirect_to reservations_path, :notice => "Reservation Made"
     else
-      render :action => :new
+      render :action => :new, :notice => "Reservation not possible"
     end
   end
 

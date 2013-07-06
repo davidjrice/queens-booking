@@ -18,13 +18,13 @@
   <li class="active">  
     <a class="brand" href="#">QUB</a>  
   </li>  
-  <li><a href="#">New Reservation</a></li>  
-  <li><a href="#">My Reservations</a></li>
+  <li><a href="#"><%= link_to "New Reservation", new_reservation_path =%></a></li>  
+  <li><a href="#"><%= link_to "My Reservations", reservations_path =%></a></li>
   <li><a href="#">Help</a></li>    
 </ul>  
 
 <ul class="nav pull-right">
-  <li><a href="#">Sign Out</a></li>
+  <li><a href="#"><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" =%></a></li>
 
     </div>  
   </div>  
