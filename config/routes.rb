@@ -1,10 +1,13 @@
 QueensBookings::Application.routes.draw do
+  resources :devices
+
   devise_for :users
   resources :reservations
 
   root 'reservations#index'
 
-  get 'pages/help' => 'pages#help'
+  get '/pages/help' => 'pages#help'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
