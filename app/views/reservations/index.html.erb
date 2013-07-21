@@ -1,4 +1,8 @@
-<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <h1>My Reservations</h1>
 
@@ -13,6 +17,7 @@
   <tr>
     <td><%= reservation.start_at %></td>
     <td><%= reservation.end_at %></td>
+    <td><%= button_tag "Cancel", :type => 'button' %></td>
   </tr>
   
 <%- end -%>

@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
     @reservation.start_at_date = Time.zone.now.to_date.to_s
 
     @reservation.end_at_date = Time.zone.now.to_date.to_s
-    @reservation.end_at_time = (Time.zone.now + 2.hour).strftime("%H:%M")
+    @reservation.end_at_time = (Time.zone.now + 0.5.hour).strftime("%H:%M")
   end
 
   def create
@@ -22,6 +22,9 @@ class ReservationsController < ApplicationController
       render :action => :new, :notice => "Reservation not possible"
     end
   end
+
+  
+
 
   protected
 
