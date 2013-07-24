@@ -1,3 +1,10 @@
+class Time
+
+   def round_off(seconds = 6500)
+    Time.at((self.to_f / seconds).round * seconds)
+  end
+end
+
 class ReservationsController < ApplicationController
 
   def index
@@ -7,9 +14,10 @@ class ReservationsController < ApplicationController
   def new
   	@reservation = Reservation.new
     @reservation.start_at_date = Time.zone.now.to_date.to_s
+    @reservation.start_at_time = (Time.zone.now.round_off).strftime("%H:%M")
 
     @reservation.end_at_date = Time.zone.now.to_date.to_s
-    @reservation.end_at_time = (Time.zone.now + 0.5.hour).strftime("%H:%M")
+    @reservation.end_at_time = (Time.zone.now.round_off + 0.5.hour).strftime("%H:%M")
   end
 
   def create
