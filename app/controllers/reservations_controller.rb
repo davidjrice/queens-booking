@@ -33,8 +33,6 @@ class ReservationsController < ApplicationController
     if @reservation.save
     	redirect_to reservations_path, :notice => "Reservation Made"
 
-    elsif @reservation.start_at_time < (Time.zone.now).strftime("H:%M")
-      render :action => :new, :notice => "Time not possible"
     else
       render :action => :new, :notice => "Reservation not possible"
     end
