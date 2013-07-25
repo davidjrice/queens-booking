@@ -6,9 +6,6 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= render_flash %>
-<%= yield %>
 
 <body>
 <div class="navbar navbar-fixed-top">  
@@ -29,6 +26,14 @@
     </div>  
   </div>  
 </div>  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= render_flash %>
+<%= yield %>
 
 </body>
 </html>
