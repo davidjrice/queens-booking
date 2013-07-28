@@ -26,11 +26,16 @@ class Reservation < ActiveRecord::Base
   end
 end
 
+def cancel
+
+  end
+
 
 
 
   ## TODO: validations
   validates :user_id, :presence => true
   validates :device_id, :reservation_overlap => false
+  validates :reservation, :cancel => false
 
 end

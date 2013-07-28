@@ -10,8 +10,9 @@
     <th>Start date and time</th>
     <th>End date and time</th>
   </tr>
-<%- @reservations.each do |reservation| -%>
-  <tr>
+
+<tr> 
+    <%- @reservations.each do |reservation| -%>
     <td><%= reservation.start_at %></td>
     <td><%= reservation.end_at %></td>
     <td><%= button_tag "Cancel", :type => 'button' %></td>
