@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
          def timeout_in
-
+           
            5.minutes
 
          end
