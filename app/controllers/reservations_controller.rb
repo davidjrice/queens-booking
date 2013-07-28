@@ -20,12 +20,14 @@ class ReservationsController < ApplicationController
 
     @reservation.end_at_date = Time.zone.now.to_date.to_s
     @reservation.end_at_time = (Time.zone.now.round_off + 0.5.hour).strftime("%H:%M")
+  end
 
     # adding validation so that times in the past cannot be selected for reservation start times
+    def invalid
     if @reservation.start_at_time < Time.zone.now
       render :action => :new, :notice => "Start time must not be in the past"
     end
-  end
+    end
 
   def create
   	@reservation = Reservation.new reservation_params
@@ -44,7 +46,7 @@ class ReservationsController < ApplicationController
   protected
 
   def reservation_params
-  	params.require(:reservation).permit(:start_at_date, :start_at_time, :end_at_date, :end_at_time)
+  	params.require(:reservation).permit(:start_at_date, :start_at_time, :end_at_date, :end_at_time, :device_id)
   end
 
 end

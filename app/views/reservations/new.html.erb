@@ -15,5 +15,8 @@
     <span class='add-on'><i class='icon-time'></i></span>
   </div> <br/>
 <br>
+
+Select device <%= select("reservation", "device_id", Device.all.collect {|d| [ d.name, d.id ] }, {include_blank: 'None'}) %>
+
   <%= f.submit %>
 <% end %>

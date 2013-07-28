@@ -28,7 +28,7 @@ end
 
 def cancel
 
-  end
+end
 
 
 
@@ -36,6 +36,6 @@ def cancel
   ## TODO: validations
   validates :user_id, :presence => true
   validates :device_id, :reservation_overlap => false
-  validates :reservation, :cancel => false
+  #validates :reservation, :cancel => true
 
 end
