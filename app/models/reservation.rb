@@ -12,7 +12,7 @@ class Reservation < ActiveRecord::Base
   validate :must_not_be_in_the_past
 
   def must_not_be_in_the_past
-    errors.add(:base, 'Reservation must not be in the past.') if self.start_at < Time.zone.now
+    errors.add(:base, 'Reservation must not be in the past.') if self.start_at+1.minute < Time.zone.now
   end
 
   def cancel!
@@ -27,11 +27,10 @@ class Reservation < ActiveRecord::Base
   end
 
 
-
 validate :must_choose_device
 
 def must_choose_device
-errors.add(:base, 'Must choose a device.') if self.device_id = nil
+errors.add(:base, 'Must choose a device.') if !self.device_id 
  end
 
 
