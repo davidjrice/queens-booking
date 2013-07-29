@@ -1,12 +1,17 @@
 QueensBookings::Application.routes.draw do
-  resources :devices
+  resources :devices 
 
   devise_for :users
-  resources :reservations
+
+  resources :reservations do
+    member do
+      post 'cancel'
+    end
+  end
 
   root 'reservations#index'
 
-  get '/pages/help' => 'pages#help'
+  get 'help' => 'pages#help'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

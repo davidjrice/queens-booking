@@ -34,7 +34,15 @@ class ReservationsController < ApplicationController
     end
   end
 
-  
+  def cancel
+    @reservation = Reservation.find(params[:id])
+    if @reservation.cancel!
+      redirect_to reservations_path, :notice => "Reservation cancelled"
+    else 
+      redirect_to reservations_path, :notice => "Unable to cancel reservation"
+    end
+  end
+
 
   protected
 

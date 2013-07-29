@@ -5,8 +5,4 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
 
-  def help
-
-  end
-  
 end

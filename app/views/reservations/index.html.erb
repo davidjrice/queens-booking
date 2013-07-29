@@ -5,22 +5,28 @@
 <br>
 <br>
 
-<table>
-  <tr>
-    <th>Start date and time</th>
-    <th>End date and time</th>
-  </tr>
-
-<tr> 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start date and time</th>
+      <th>End date and time</th>
+      <th>Device ID</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
     <%- @reservations.each do |reservation| -%>
-    <td><%= reservation.start_at %></td>
-    <td><%= reservation.end_at %></td>
-    <td><%= button_tag "Cancel", :type => 'button' %></td>
-  </tr>
-  
-  <%#   button.onclick do  %>
-  <%#  window.Alert("cancel?") %>
-<%# end %>
-<%- end -%>
+    <tr> 
+      <td><%= reservation.start_at %></td>
+      <td><%= reservation.end_at %></td>
+      <td><%= reservation.device_id %></td>
+      <%- if reservation.cancelled? -%>
+      <td>Cancelled</td>
+      <%- else -%>
+      <td><%= button_to "Cancel", cancel_reservation_path(reservation) %></td>
+      <%- end -%>
+    </tr>
+    <%- end -%>
+  </tbody>
 </table>
 
