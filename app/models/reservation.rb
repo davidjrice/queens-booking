@@ -26,7 +26,6 @@ class Reservation < ActiveRecord::Base
     self.end_at = Time.zone.parse("#{end_at_date} #{end_at_time}") if end_at_date && end_at_time
   end
 
-
 validate :must_choose_device
 
 def must_choose_device

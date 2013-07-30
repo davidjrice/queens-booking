@@ -17,8 +17,8 @@
   <tbody>
     <%- @reservations.each do |reservation| -%>
     <tr> 
-      <td><%= reservation.start_at %></td>
-      <td><%= reservation.end_at %></td>
+      <td><%= reservation.start_at.strftime("%d %b %y"", " "%H"":""%M") %></td>
+      <td><%= reservation.end_at.strftime("%d %b %y"", " "%H"":""%M") %></td>
       <td><%= reservation.device_id %></td>
       <%- if reservation.cancelled? -%>
       <td>Cancelled</td>

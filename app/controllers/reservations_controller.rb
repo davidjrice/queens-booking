@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
     @reservation.start_at_time = (Time.zone.now).strftime("%H:%M")
 
     @reservation.end_at_date = Time.zone.now.to_date.to_s
-    @reservation.end_at_time = (Time.zone.now.round_off + 0.5.hour).strftime("%H:%M")
+    @reservation.end_at_time = (Time.zone.now + 0.5.hour).strftime("%H:%M")
   end
 
   def create
