@@ -15,6 +15,9 @@ gem 'bootstrap-datepicker-rails'
 # Bootstrap Timepicker Rails
 gem 'bootstrap-timepicker-rails'
 
+# Timeliness gem
+gem 'validates_timeliness', '~> 3.0'
+
 # Twitter Bootstrap UI components
 gem 'bootstrap-sass', '~> 2.3.2.0'
 

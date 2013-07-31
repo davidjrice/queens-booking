@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 devices = Device.create([
-  {name: "device_01"},
-  {name: "device_02"},
-  {name: "device_03"}
+  {name: "Device 1"},
+  {name: "Device 2"},
+  {name: "Device 3"}
  ])
+

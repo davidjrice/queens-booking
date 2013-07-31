@@ -10,6 +10,7 @@
     <tr>
       <th>Start date and time</th>
       <th>End date and time</th>
+      <th>Duration</th>
       <th>Device ID</th>
       <th>Status</th>
     </tr>
@@ -19,6 +20,7 @@
     <tr> 
       <td><%= reservation.start_at.strftime("%d %b %y"", " "%H"":""%M") %></td>
       <td><%= reservation.end_at.strftime("%d %b %y"", " "%H"":""%M") %></td>
+      <td><%= ((reservation.start_at_time.to_f - reservation.end_at_time.to_f) / 3600).round %></td>
       <td><%= reservation.device_id %></td>
       <%- if reservation.cancelled? -%>
       <td>Cancelled</td>
