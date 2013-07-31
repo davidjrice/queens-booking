@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('[data-behaviour~=timepicker]').timepicker({
-    minuteStep: 1,
+    minuteStep: 15,
     template: 'modal',
     // showSeconds: true,
     showMeridian: false
