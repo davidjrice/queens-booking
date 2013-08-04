@@ -11,3 +11,8 @@ devices = Device.create([
   {name: "Device 3"}
  ])
 
+users = User.create([
+  {email: "rachel.rice@gmail.com", encrypted_password: "$2a$10$yOpXA7Bk.7.eQ9..bewSE.lSsS3nH3KJtWeGfKRy/wW2lGCWkdOjG", user_type: "student"},
+  {email: "rrice03@qub.ac.uk", user_type: "admin"}
+  ])
+
