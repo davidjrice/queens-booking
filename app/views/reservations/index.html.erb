@@ -1,7 +1,7 @@
 
 
-<h1>My Reservations</h1>
-
+<h1>Reservations for <%= current_user.name %> </h1>
+  
 <br>
 <br>
 
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <%- @reservations.each do |reservation| -%>
+    <%- @reservations.each  do |reservation| -%>
     <tr> 
       <td><%= reservation.start_at.strftime("%d %b %y"", " "%H"":""%M") %></td>
       <td><%= reservation.end_at.strftime("%d %b %y"", " "%H"":""%M") %></td>

@@ -8,6 +8,13 @@ class Reservation < ActiveRecord::Base
   ## TODO: validations
   validates :user_id, :presence => true
   
+  
+
+  # Check if a given interval overlaps this interval    
+    def overlaps?(other)
+    errors.add(:base, 'Reservation overlaps') if ((start_at_time - other.end_at_time) * (other.start_at_time - end_at_time) >= 0) && (device_id = other.device_id)
+    end
+
 
   validate :must_not_be_in_the_past
 

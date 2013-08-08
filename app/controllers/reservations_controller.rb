@@ -5,6 +5,10 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
 
+   def layout
+
+    end
+
   def new
   	@reservation = Reservation.new
     @reservation.start_at_date = Time.zone.now.to_date.to_s

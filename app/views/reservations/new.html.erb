@@ -29,5 +29,8 @@
 
 Select device <%= select("reservation", "device_id", Device.all.collect {|d| [ d.name, d.id ] }, {include_blank: 'None'}) %>
 
+
+<%= button_to "View layout", layout_path, :method => "get" %>
+
   <%= f.submit %>
 <% end %>
