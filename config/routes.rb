@@ -9,11 +9,16 @@ QueensBookings::Application.routes.draw do
     end
   end
 
-  root 'reservations#index'
+  namespace :admin do
+  get '/' => 'users#index'
+  resources :users
+  end
 
+  root 'pages#home'
+  get 'home' => 'pages#home'
   get 'help' => 'pages#help'
 
-  get 'layout' => 'reservations#layout'
+  get 'layout' => 'pages#layout'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

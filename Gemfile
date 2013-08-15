@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -8,6 +9,9 @@ gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+
+# CanCan for user authorisation
+gem 'cancan'
 
 # Bootstrap Datepicker Rails
 gem 'bootstrap-datepicker-rails'

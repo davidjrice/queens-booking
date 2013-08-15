@@ -1,0 +1,9 @@
+Welcome to the device reservation system, <%= current_user.name %>! 
+
+<%- user = User.find(current_user.id) %>
+<%- if user.user_type? :admin, "admin" %>
+<%- elsif user.user_type? :student, "hello user!" %>
+<%- else user.user_type? :teaching, "hello teaching staff" %>
+<%- end %>
+
+

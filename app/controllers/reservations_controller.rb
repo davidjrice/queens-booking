@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
   end
 
    def layout
-
+     
     end
 
   def new
