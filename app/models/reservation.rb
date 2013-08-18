@@ -8,14 +8,19 @@ class Reservation < ActiveRecord::Base
   ## TODO: validations
   validates :user_id, :presence => true
   
- 
-validate :overlapcheck
+  scope :overlapping, lambda { |interval|
+    where("(DATEDIFF(start_at, ?) * DATEDIFF(?, end_at)) >= 0", interval.end_at, interval.start_at)
+  }
+  scope :for_device, lambda { |device_id|
+    where(:device_id => device_id)
+  }
 
-def overlapcheck
-  errors.add(:base, 'Reservation overlaps') if ((self.start_at - end_at) * (start_at - self.end_at) >= 0)
-end
- 
-
+  validate :overlapcheck
+  def overlapcheck
+    if self.class.for_device(self.device_id).overlapping(self).size > 0
+      errors.add(:base, 'Reservation overlaps')
+    end
+  end
 
   validate :must_not_be_in_the_past
 
