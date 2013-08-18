@@ -15,14 +15,14 @@
   Start date: <%= f.text_field :start_at_date, 'data-behaviour' => 'datepicker', 'data-date-format' => 'yyyy-mm-dd' %><br />
 
   Start time: <div class='input-append bootstrap-timepicker' style='display: inline;'  >
-    <%= f.text_field :start_at_time, :class => "input-small", 'data-behaviour' => 'timepicker', 'data-minute-step' => "15" %>
+    <%= f.text_field :start_at_time, :class => "input-small", 'data-behaviour' => 'timepicker', 'data-minute-step' => "15", 'data-default-time' => @reservation.start_at_time %>
     <span class='add-on'><i class='icon-time'></i></span>
   </div> <br/>
 <br>
   End date: <%= f.text_field :end_at_date, 'data-behaviour' => 'datepicker', 'data-date-format' => 'yyyy-mm-dd' %><br />
 
  End time <div class='input-append bootstrap-timepicker' style='display: inline;'>
-    <%= f.text_field :end_at_time, :class => "input-small", 'data-behaviour' => 'timepicker', 'data-time' => @reservation, 'data-minute-step' => "15" %>
+    <%= f.text_field :end_at_time, :class => "input-small", 'data-behaviour' => 'timepicker', 'data-default-time' => @reservation.end_at_time, 'data-minute-step' => "15" %>
     <span class='add-on'><i class='icon-time'></i></span>
   </div> <br/>
 <br>
