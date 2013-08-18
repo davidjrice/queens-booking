@@ -9,10 +9,13 @@ QueensBookings::Application.routes.draw do
     end
   end
 
-  namespace :admin do
-  get '/' => 'users#index'
-  resources :users
-  end
+  # TODO: a namspace requires that you create a folder called admin inside controllers
+  #  then you should prefix all controllers with Admin::UsersController for example
+  # 
+  # namespace :admin do
+  #   get '/' => 'users#index'
+  #   resources :users
+  # end
 
   root 'pages#home'
   get 'home' => 'pages#home'
